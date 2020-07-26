@@ -167,6 +167,23 @@ class Bitmap(object):
                 y += 1 if y0 < y1 else -1
                 threshold += 1 * dx
 
+    def glFillPolygon(self, polygon):
+        '''Fill any given polygon'''
+        #Based on Point-in-Polygon (PIP) Algorithm
+        for y in range(self.height):
+            for x in range(self.width):
+                i = 0
+                j = len(polygon) - 1
+                draw_point = False
+                #Verifies if point is in between de boundaries
+                for i in range(len(polygon)):
+                    if (polygon[i][1] < y and polygon[j][1] >= y) or (polygon[j][1] < y and polygon[i][1] >= y):
+                        if polygon[i][0] + (y - polygon[i][1]) / (polygon[j][1] - polygon[i][1]) * (polygon[j][0] - polygon[i][0]) < x:
+                            draw_point = not draw_point
+                    j = i
+                if draw_point:
+                    self.glPoint((float(x)/(float(self.width)/2))-1,(float(y)/(float(self.height)/2))-1,self.vertex_color)
+
     def glWrite(self, file_name):
         '''Write Bitmap File'''
         
