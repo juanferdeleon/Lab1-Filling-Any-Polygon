@@ -1,6 +1,6 @@
 # LAB 1: Filling any Polygon
 
-Lab 1 es un algoritmo que puede rellenar polígonos de más de 4 puntos.en un archivo bmp, similar a su implementación de glLines() en [SR2: Lines](https://github.com/juanferdeleon/SR2-Lines).
+Lab 1 es un algoritmo que puede rellenar polígonos de más de 4 puntos.en un archivo bmp, utilizando la implementacion de glPoints() en [SR1: Points](https://github.com/juanferdeleon/SR1-Points).
 
 ## Como ejecutar el codigo
 
