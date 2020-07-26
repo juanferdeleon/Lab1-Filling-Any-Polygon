@@ -1,10 +1,10 @@
-# SR2: Lines
+# LAB 1: Filling any Polygon
 
-SR2 es un algoritmo que permite dibujar una línea en un archivo bmp, similar a su implementación de glPoint() en [SR1: Points](https://github.com/juanferdeleon/SR1-Points).
+Lab 1 es un algoritmo que puede rellenar polígonos de más de 4 puntos.en un archivo bmp, similar a su implementación de glLines() en [SR2: Lines](https://github.com/juanferdeleon/SR2-Lines).
 
 ## Como ejecutar el codigo
 
-Descargue el repositorio [SR2: Lines](https://github.com/juanferdeleon/SR2-Lines)
+Descargue el repositorio [Lab1: Filling Any Polygon](https://github.com/juanferdeleon/Lab1-Filling-Any-Polygon)
 
 Luego ejecute el archivo [Engine3D.py](/Engine3D.py) dentro de cualquier IDE.
 
