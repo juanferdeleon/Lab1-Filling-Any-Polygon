@@ -175,7 +175,7 @@ class Bitmap(object):
                 i = 0
                 j = len(polygon) - 1
                 draw_point = False
-                #Verifies if point is in between de boundaries
+                #Verifies if point is in between the boundaries
                 for i in range(len(polygon)):
                     if (polygon[i][1] < y and polygon[j][1] >= y) or (polygon[j][1] < y and polygon[i][1] >= y):
                         if polygon[i][0] + (y - polygon[i][1]) / (polygon[j][1] - polygon[i][1]) * (polygon[j][0] - polygon[i][0]) < x:

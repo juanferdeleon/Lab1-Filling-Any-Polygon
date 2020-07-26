@@ -11,7 +11,7 @@ Engine 3D
 
 from gl import Bitmap
 
-bmp = Bitmap(600, 600)
+bmp = Bitmap(600, 800)
 
 def glInit():
     return bmp
@@ -23,62 +23,38 @@ if __name__ == '__main__':
     #Initialize bmp Object
     bmp = glInit()
 
-    #Input bmp width and height
-    while True:
-        bmp_width = input("\nIngrese ancho de la imagen: ")
-        bmp_height = input("\nIngrese alto de la imagen: ")
-        try:
-            bmp_width = int(bmp_width)
-            bmp_height = int(bmp_height)
-            break
-        except ValueError:
-            print("\n\nERROR: Por favor ingrese un numero entero.\n")
-
-    #Set bmp width and height
-    bmp.glCreateWindow(bmp_height, bmp_width)
-
-    #Input bmp Viewport width and height
-    while True:
-        bmp_viewport_x = input("\nIngrese coordenada X para el Viewport: ")
-        bmp_viewport_y = input("\nIngrese coordenada Y para el Viewport: ")
-        bmp_viewport_width = input("\nIngrese ancho del ViewPort: ")
-        bmp_viewport_height = input("\nIngrese alto del ViewPort: ")
-        try:
-            bmp_viewport_x = int(bmp_viewport_x)
-            bmp_viewport_y = int(bmp_viewport_y)
-            bmp_viewport_width = int(bmp_viewport_width)
-            bmp_viewport_height = int(bmp_viewport_height)
-            break
-        except ValueError:
-            print("\n\nERROR: Por favor ingrese un numero entero.\n")
-
-    #Set bmp Viewport width and height
-    bmp.glViewPort(bmp_viewport_x, bmp_viewport_y, bmp_viewport_height, bmp_viewport_width)
-
     #Set all pixels to same color
     bmp.glClear()
 
-    #Input glVertex Colors
-    while True:
-        bmp_r = input("\nHex color (R): ")
-        bmp_g = input("\nHex color (G): ")
-        bmp_b = input("\nHex color (B): ")
-        try:
-            bmp_r = float(bmp_r)
-            bmp_g = float(bmp_g)
-            bmp_b = float(bmp_b)
-            if 0 <= bmp_g <= 1 and 0 <= bmp_g <= 1 and 0 <= bmp_b <= 1:
-                break
-        except ValueError:
-            print("\n\nERROR: Por favor ingrese un numero entre 0 y 1.\n")
+    #Set pixel Colors / Star
+    bmp.glColor(1, 0.93, 0.2)
+    #Polygon 1 / Star
+    polygon_1 = ((165, 380), (185, 360), (180, 330), (207, 345), (233, 330), (230, 360), (250, 380), (220, 385), (205, 410), (193, 383))
+    bmp.glFillPolygon(polygon_1)
 
-    #Input glVertex Colors
-    bmp.glColor(bmp_r, bmp_g, bmp_b)
+    #Set pixel Colors / Square
+    bmp.glColor(0.2, 1, 0.87)
+    #Polygon 2 / Square
+    polygon_2 = ((321, 335), (288, 286), (339, 251), (374, 302))
+    bmp.glFillPolygon(polygon_2)
 
-    bmp.glLine(-1, -1, 1, 1)
-    bmp.glLine(-1, 1, 1, -1)
-    bmp.glLine(0, -1, 0, 1)
-    bmp.glLine(-1, 0, 1, 0)
+    #Set pixel Colors / Triangle
+    bmp.glColor(0.2, 1, 0.26)
+    #Polygon 3 / Triangle
+    polygon_3 = ((377, 249), (411, 197), (436, 249))
+    bmp.glFillPolygon(polygon_3)
+
+    #Set pixel Colors / Teapot
+    bmp.glColor(0, 0, 1)
+    #Polygon 4 / Teapot
+    polygon_4 = ((413, 177), (448, 159), (502, 88), (553, 53), (535, 36), (676, 37), (660, 52), (750, 145), (761, 179), (672, 192), (659, 214), (615, 214), (632, 230), (580, 230), (597, 215), (552, 214), (517, 144), (466, 180))
+    bmp.glFillPolygon(polygon_4)
+
+    #Set pixel Colors / Teapot hole
+    bmp.glColor(1, 1, 1)
+    #Polygon 5 / Teapot hole
+    polygon_5 = ((682, 175), (708, 120), (735, 148), (739, 170))
+    bmp.glFillPolygon(polygon_5)
 
     #Output BMP
     bmp.glWrite("test.bmp")
